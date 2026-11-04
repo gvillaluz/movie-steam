@@ -1,0 +1,167 @@
+
+> moviestreamer-backend@0.1.0 test
+> tsc -p tsconfig.test.json && node --test .test-dist/test/*.test.js
+
+▶ Popular movie catalog through the real controller and service
+  ✖ aggregates five pages, keeps first position and last duplicate value, and filters incomplete entries (104.3289ms)
+  ✖ represents a genuinely empty catalog as a successful empty list (22.7461ms)
+  ✖ rejects a upstream page without returning a partial list (11.5228ms)
+  ✖ rejects a invalid page without returning a partial list (14.0101ms)
+  ✖ reports an upstream timeout distinctly (14.7977ms)
+  ✖ reports missing server credentials without making a provider call (57.2207ms)
+✖ Popular movie catalog through the real controller and service (10496.561ms)
+▶ Startup configuration
+  ✔ defaults to a local development server (22.1671ms)
+  ✔ accepts explicit valid configuration (0.2807ms)
+  ✔ permits an OS-assigned port for isolated verification (0.2173ms)
+  ✔ rejects invalid port "-1" (0.5108ms)
+  ✔ rejects invalid port "65536" (0.1462ms)
+  ✔ rejects invalid port "abc" (0.1176ms)
+  ✔ rejects invalid port "5080junk" (0.0946ms)
+  ✔ rejects invalid port "" (0.2237ms)
+  ✔ rejects invalid port "3.5" (0.3527ms)
+  ✔ rejects an empty host (0.5956ms)
+  ✔ rejects unsupported environments (0.3495ms)
+✔ Startup configuration (28.2148ms)
+▶ Foundation HTTP contract
+  ✔ returns only the liveness status (113.0687ms)
+  ✔ returns consistent problem details for an unknown route (26.4283ms)
+  ✔ uses Nest routing semantics for unsupported methods (11.5016ms)
+  ✔ does not expose unexpected exception messages or stack traces (13.4976ms)
+  ✔ accepts a valid DTO (542.9649ms)
+  ✔ rejects an invalid DTO: {"name":42} (17.9596ms)
+  ✔ rejects an invalid DTO: {"name":""} (13.5829ms)
+  ✔ rejects an invalid DTO: {} (13.9947ms)
+  ✔ rejects an invalid DTO: {"name":"Room","admin":true} (15.2445ms)
+✔ Foundation HTTP contract (1497.5847ms)
+ℹ tests 26
+ℹ suites 3
+ℹ pass 20
+ℹ fail 6
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 30938.0381
+
+✖ failing tests:
+
+test at .test-dist\test\catalog.test.js:72:24
+✖ aggregates five pages, keeps first position and last duplicate value, and filters incomplete entries (104.3289ms)
+  Error: expected 200 "OK", got 404 "Not Found"
+      at TestContext.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\.test-dist\test\catalog.test.js:73:113)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Promise.all (index 0)
+      at async Suite.run (node:internal/test_runner/test:1905:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ----
+      at Test._assertStatus (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:404:14)
+      at C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:460:13
+      at Test._assertFunction (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:437:13)
+      at Test.assert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:302:23)
+      at localAssert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:220:38)
+      at Server.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:227:13)
+      at Server.wrapper (node:events:639:12)
+      at Server.emit (node:events:514:20)
+      at emitCloseNT (node:net:2941:8)
+      at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+
+test at .test-dist\test\catalog.test.js:81:24
+✖ represents a genuinely empty catalog as a successful empty list (22.7461ms)
+  Error: expected 200 "OK", got 404 "Not Found"
+      at TestContext.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\.test-dist\test\catalog.test.js:83:96)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ----
+      at Test._assertStatus (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:404:14)
+      at C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:460:13
+      at Test._assertFunction (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:437:13)
+      at Test.assert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:302:23)
+      at localAssert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:220:38)
+      at Server.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:227:13)
+      at Server.wrapper (node:events:639:12)
+      at Server.emit (node:events:514:20)
+      at emitCloseNT (node:net:2941:8)
+      at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+
+test at .test-dist\test\catalog.test.js:86:28
+✖ rejects a upstream page without returning a partial list (11.5228ms)
+  Error: expected 502 "Bad Gateway", got 404 "Not Found"
+      at TestContext.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\.test-dist\test\catalog.test.js:88:117)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ----
+      at Test._assertStatus (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:404:14)
+      at C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:460:13
+      at Test._assertFunction (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:437:13)
+      at Test.assert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:302:23)
+      at localAssert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:220:38)
+      at Server.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:227:13)
+      at Server.wrapper (node:events:639:12)
+      at Server.emit (node:events:514:20)
+      at emitCloseNT (node:net:2941:8)
+      at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+
+test at .test-dist\test\catalog.test.js:86:28
+✖ rejects a invalid page without returning a partial list (14.0101ms)
+  Error: expected 502 "Bad Gateway", got 404 "Not Found"
+      at TestContext.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\.test-dist\test\catalog.test.js:88:117)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ----
+      at Test._assertStatus (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:404:14)
+      at C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:460:13
+      at Test._assertFunction (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:437:13)
+      at Test.assert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:302:23)
+      at localAssert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:220:38)
+      at Server.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:227:13)
+      at Server.wrapper (node:events:639:12)
+      at Server.emit (node:events:514:20)
+      at emitCloseNT (node:net:2941:8)
+      at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+
+test at .test-dist\test\catalog.test.js:96:24
+✖ reports an upstream timeout distinctly (14.7977ms)
+  Error: expected 504 "Gateway Timeout", got 404 "Not Found"
+      at TestContext.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\.test-dist\test\catalog.test.js:98:96)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ----
+      at Test._assertStatus (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:404:14)
+      at C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:460:13
+      at Test._assertFunction (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:437:13)
+      at Test.assert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:302:23)
+      at localAssert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:220:38)
+      at Server.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:227:13)
+      at Server.wrapper (node:events:639:12)
+      at Server.emit (node:events:514:20)
+      at emitCloseNT (node:net:2941:8)
+      at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+
+test at .test-dist\test\catalog.test.js:100:24
+✖ reports missing server credentials without making a provider call (57.2207ms)
+  Error: expected 503 "Service Unavailable", got 404 "Not Found"
+      at TestContext.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\.test-dist\test\catalog.test.js:108:112)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ----
+      at Test._assertStatus (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:404:14)
+      at C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:460:13
+      at Test._assertFunction (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:437:13)
+      at Test.assert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:302:23)
+      at localAssert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:220:38)
+      at Server.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:227:13)
+      at Server.wrapper (node:events:639:12)
+      at Server.emit (node:events:514:20)
+      at emitCloseNT (node:net:2941:8)
+      at process.processTicksAndRejections (node:internal/process/task_queues:89:21)

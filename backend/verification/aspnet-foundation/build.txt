@@ -1,0 +1,8 @@
+  MovieStreamer.Backend -> C:\Users\berna\Documents\movieStreamer\backend\bin\Debug\net10.0\MovieStreamer.Backend.dll
+  MovieStreamer.Tests -> C:\Users\berna\Documents\movieStreamer\backend\Tests\bin\Debug\net10.0\MovieStreamer.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:05.68

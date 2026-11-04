@@ -1,0 +1,158 @@
+[
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\App.css",
+    "Hash": "7DC77AF3C5C43147AD24C9A4920617CF74BA48B9B97DBD7716676112511FA362"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\App.jsx",
+    "Hash": "B9656CFD5855344D09115D538BABA8DFD50E3710C6CD21D18C883A83F0EE9C2A"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\index.css",
+    "Hash": "6BEE354B79C71064FCC1519BA4D7943730E93AA5E5AD5789763B3F171B3407C2"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\main.jsx",
+    "Hash": "9D8C20B0D91477266FD4D48F07B94EF5A562BE4B4FC0BEC9C6CB0B6C27415BD4"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\api\\animeAPI.js",
+    "Hash": "59C9EA15A5A58A4CADCCA061AA90C314E105959667CC1ADA9260C64972A40AE7"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\api\\contentAPI.js",
+    "Hash": "9DFC94959005BE042E49B0FC37E913025EFECEADAFBEAFFA6FADBD9587517100"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\api\\movieAPI.js",
+    "Hash": "16976F48A8D598216178C1DF9D484C8B8751575D888922D1CB135061229DF201"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\api\\searchAPI.js",
+    "Hash": "A64FB0C5419115478CEAE9B01D8B38D3C915B639526049C62A0DC3FD0140C4F2"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\api\\seriesAPI.js",
+    "Hash": "364014758A348F7531D5A05A11703A24C4AA8D2CE7E72F19FB158489E5DADBDD"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\api\\tmdbConfig.js",
+    "Hash": "398E4C68905CB38B9374620E0EB1A7C5C16A480BC01C8E3DE6EE4CA7BB5CE275"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\assets\\logo.png",
+    "Hash": "82C527B73BC91851D1DB0F444BF2CB3219DA59B5ACBB1AA1785BED55386CB2DD"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\assets\\react.svg",
+    "Hash": "35EF61ED53B323AE94A16A8EC659B3D0AF3880698791133F23B084085AB1C2E5"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\components\\EmptyList.css",
+    "Hash": "53EDB5116978DAC9B2850CA08B2538D066A5EBF148B73E5FFF1DC4A4EFCA91EC"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\components\\EmptyList.jsx",
+    "Hash": "9FA750418685F0EC47FA959D4AB2BA1677A1E8A38F2ECB3BD5CEEF3601EAEA52"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\components\\MovieCard.css",
+    "Hash": "9FA25286F50B28A65353BA62C269A3846FA83D5E78E577E6B7ED5595AF1B8E98"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\components\\MovieCard.jsx",
+    "Hash": "EE3C60E3A2AA23F93A06158C736637E490C2B4806F26608AE76ADB3B71FBCF6E"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\components\\MovieList.css",
+    "Hash": "C350D437E79D5B7B403B55599751B144291EC0F52BEB1895E2B415F5833F92BB"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\components\\MovieList.jsx",
+    "Hash": "BAD451F24A0C0857979E67338A2CAA8D8F0D9E90092062A15898BE8A5B4B1A02"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\components\\NavBar.css",
+    "Hash": "0965E5D090C7743F205CB186352BEF84D12BEC0766E97E3870424F0CD673984F"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\components\\NavBar.jsx",
+    "Hash": "3163904B0A1F58CF22B27C3951DD05D553A4FE2E7541EBEDE531AB71F9FD2879"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\components\\SearchBar.css",
+    "Hash": "152DCCF7348F3C22979E6B1BD40860F373E5A43A3AC471CB80590F18852C56CF"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\components\\SearchBar.jsx",
+    "Hash": "25EBF48EB87CC6EDDA3F94C702D9284628433F3F047CADB37F81558D2266EAAF"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\context\\searchContext.jsx",
+    "Hash": "7AFF005B0C08320D89E0736CCADB79B36B98D8F9FC8E737655A6CE85D146A6BE"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\pages\\Description\\DescriptionPage.css",
+    "Hash": "7FC59C6BDE74E30EBC9D4BA1CB9BB8FBB0026971F640050546F76B82D09191FC"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\pages\\Description\\DescriptionPage.jsx",
+    "Hash": "B4EAFAA79B370CC124D0162BFE84120DBA9B00F496E96CB5E16CA2854BAB34F8"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\pages\\Description\\components\\Details.jsx",
+    "Hash": "8AB3783E6C28CF3AD312F9FFF13215C333CCAE07A71CC3981D8B9AA335E0EEC7"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\pages\\Description\\components\\RelatedContent.jsx",
+    "Hash": "7DF5048EEB78BA848372A7BC3AA33DC5B2D408035532BDDDD74983CAE4F6C4FE"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\pages\\Description\\components\\Trailer.jsx",
+    "Hash": "374593EDD48C9C01179D00BD984DF6E54E72090EFF9E7996B9E8BE0D3F2EDFD7"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\pages\\Favorites\\FavoritesPage.css",
+    "Hash": "AE4A662E5DCB0C010364147EC8BBF4AFF8F70958B4294D27A71F89FE67AE972E"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\pages\\Favorites\\FavoritesPage.jsx",
+    "Hash": "035351E5B65C0B3B76C179C2BB9FED67953E35F95F9BDC34A0FC01BD8E888B1A"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\pages\\Home\\HomePage.css",
+    "Hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\pages\\Home\\HomePage.jsx",
+    "Hash": "22307C38A6DA1FD92D784FC1A4084B0C967FF4E7F12ED06902268D995E0916C0"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\pages\\Movie\\MoviePage.jsx",
+    "Hash": "3EB94BC5A7044A5C6E0C840412F8E34A5098DC8A2EC46C0076830C8A053EE085"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\pages\\Series\\TvSeriesPage.jsx",
+    "Hash": "C455A398E9FE0BA7EE99494D3D69568640E07EA91131AC0A780EA32245A36E22"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\pages\\Watch\\WatchPage.css",
+    "Hash": "3E716038CD49134684B9009A191B12CEC61F91E29D42D2DD617C235133A0036E"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\pages\\Watch\\WatchPage.jsx",
+    "Hash": "8E7F622EE2D364015AFBE00A7CE930ACCF4271BA14BF90583051FAD42A4C73C4"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\pages\\Watch\\components\\WatchPageRelated.css",
+    "Hash": "D71807A2745201C8C47CAD6EA1A2A7D47F08373BB1378EEFA176D24D36ADE9B8"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\pages\\Watch\\components\\WatchPageRelated.jsx",
+    "Hash": "83F732C5DFB891AC6D4D10271861F49E67036F92993C256729EC7BCBFF244147"
+  },
+  {
+    "Path": "C:\\Users\\berna\\Documents\\movieStreamer\\client\\src\\utils\\DurationUtils.js",
+    "Hash": "88227E7C6757E50CC07EEDB66A120E612E204C60D17F4990557C41FEBB1561FF"
+  }
+]

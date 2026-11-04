@@ -1,0 +1,149 @@
+
+> client@0.0.0 test
+> node --test test/*.test.mjs
+
+TypeError: response.data.results is not iterable (cannot read property undefined)
+    at loadMovies (file:///C:/Users/berna/Documents/movieStreamer/client/src/api/movieAPI.js:9:20)
+    at async TestContext.<anonymous> (file:///C:/Users/berna/Documents/movieStreamer/client/test/movie-api.test.mjs:18:22)
+    at async Test.run (node:internal/test_runner/test:1409:7)
+    at async Promise.all (index 0)
+    at async Suite.run (node:internal/test_runner/test:1905:7)
+    at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+TypeError: response.data.results is not iterable (cannot read property undefined)
+    at loadMovies (file:///C:/Users/berna/Documents/movieStreamer/client/src/api/movieAPI.js:9:20)
+    at async TestContext.<anonymous> (file:///C:/Users/berna/Documents/movieStreamer/client/test/movie-api.test.mjs:26:22)
+    at async Test.run (node:internal/test_runner/test:1409:7)
+    at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7)
+Error: Backend unavailable
+    at axios.defaults.adapter (file:///C:/Users/berna/Documents/movieStreamer/client/test/movie-api.test.mjs:30:50)
+    at Axios.dispatchRequest (file:///C:/Users/berna/Documents/movieStreamer/client/node_modules/axios/lib/core/dispatchRequest.js:51:10)
+    at Axios._request (file:///C:/Users/berna/Documents/movieStreamer/client/node_modules/axios/lib/core/Axios.js:187:33)
+    at Axios.request (file:///C:/Users/berna/Documents/movieStreamer/client/node_modules/axios/lib/core/Axios.js:40:25)
+    at Axios.<computed> [as get] (file:///C:/Users/berna/Documents/movieStreamer/client/node_modules/axios/lib/core/Axios.js:213:17)
+    at wrap [as get] (file:///C:/Users/berna/Documents/movieStreamer/client/node_modules/axios/lib/helpers/bind.js:5:15)
+    at loadMovies (file:///C:/Users/berna/Documents/movieStreamer/client/src/api/movieAPI.js:8:42)
+    at TestContext.<anonymous> (file:///C:/Users/berna/Documents/movieStreamer/client/test/movie-api.test.mjs:31:26)
+    at Test.runInAsyncScope (node:async_hooks:226:14)
+    at Test.run (node:internal/test_runner/test:1402:25)
+    at Axios.request (file:///C:/Users/berna/Documents/movieStreamer/client/node_modules/axios/lib/core/Axios.js:45:41)
+    at async loadMovies (file:///C:/Users/berna/Documents/movieStreamer/client/src/api/movieAPI.js:8:30)
+    at async waitForActual (node:assert:615:5)
+    at async strict.rejects (node:assert:738:25)
+    at async TestContext.<anonymous> (file:///C:/Users/berna/Documents/movieStreamer/client/test/movie-api.test.mjs:31:5)
+    at async Test.run (node:internal/test_runner/test:1409:7)
+    at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7)
+TypeError: response.data.results is not iterable (cannot read property undefined)
+    at loadMovies (file:///C:/Users/berna/Documents/movieStreamer/client/src/api/movieAPI.js:9:20)
+    at async waitForActual (node:assert:615:5)
+    at async strict.rejects (node:assert:738:25)
+    at async TestContext.<anonymous> (file:///C:/Users/berna/Documents/movieStreamer/client/test/movie-api.test.mjs:36:5)
+    at async Test.run (node:internal/test_runner/test:1409:7)
+    at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7)
+TypeError: response.data.results is not iterable (cannot read property undefined)
+    at loadMovies (file:///C:/Users/berna/Documents/movieStreamer/client/src/api/movieAPI.js:9:20)
+    at async waitForActual (node:assert:615:5)
+    at async strict.rejects (node:assert:738:25)
+    at async TestContext.<anonymous> (file:///C:/Users/berna/Documents/movieStreamer/client/test/movie-api.test.mjs:43:5)
+    at async Test.run (node:internal/test_runner/test:1409:7)
+    at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7)
+▶ Movie API adapter
+  ✖ requests only the backend catalog and returns its items without filtering (17.2073ms)
+  ✖ preserves a successful empty list (2.1966ms)
+  ✖ propagates a failed backend request instead of returning null (4.5543ms)
+  ✖ rejects an invalid backend contract (2.1861ms)
+  ✖ honors request cancellation (3.1319ms)
+✖ Movie API adapter (32.9422ms)
+ℹ tests 5
+ℹ suites 1
+ℹ pass 0
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3137.2976
+
+✖ failing tests:
+
+test at test\movie-api.test.mjs:10:3
+✖ requests only the backend catalog and returns its items without filtering (17.2073ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + null
+  - [
+  -   {
+  -     id: 550,
+  -     title: 'Fight Club'
+  -   }
+  - ]
+  
+      at TestContext.<anonymous> (file:///C:/Users/berna/Documents/movieStreamer/client/test/movie-api.test.mjs:18:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Promise.all (index 0)
+      at async Suite.run (node:internal/test_runner/test:1905:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: [ { id: 550, title: 'Fight Club' } ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test\movie-api.test.mjs:24:3
+✖ preserves a successful empty list (2.1966ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  
+  null !== []
+  
+      at TestContext.<anonymous> (file:///C:/Users/berna/Documents/movieStreamer/client/test/movie-api.test.mjs:26:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test\movie-api.test.mjs:29:3
+✖ propagates a failed backend request instead of returning null (4.5543ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///C:/Users/berna/Documents/movieStreamer/client/test/movie-api.test.mjs:31:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /Backend unavailable/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at test\movie-api.test.mjs:34:3
+✖ rejects an invalid backend contract (2.1861ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///C:/Users/berna/Documents/movieStreamer/client/test/movie-api.test.mjs:36:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /Invalid movie catalog response/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at test\movie-api.test.mjs:39:3
+✖ honors request cancellation (3.1319ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///C:/Users/berna/Documents/movieStreamer/client/test/movie-api.test.mjs:43:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    operator: 'rejects',
+    diff: 'simple'
+  }

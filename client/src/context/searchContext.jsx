@@ -1,16 +1,15 @@
 import { createContext, useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { search, loadMovies, loadSeries } from "../services/serviceAPI";
+import { useLocation } from "react-router-dom";
+import { useCatalog } from "../hooks/useCatalog";
 
 export const SearchContext = createContext();
 
 export function SearchProvider({ children }) {
     const location = useLocation();
     const [searchQuery, setSearchQuery] = useState("");
-    const [contents, setContent] = useState([]);
+    const { contents, loading, error, searchResults, loadCatalog, runSearch, reload } = useCatalog(location.pathname);
     const [favorites, setFavorites] = useState([]);
     const [isDescriptionPage, setIsDescriptionPage] = useState(false);
-    const [searchResults, setSearchResults] = useState("");
 
     useEffect(() => {
         const isDescription = !["/movie", "/series", "/favorites", "/"].includes(location.pathname);
@@ -35,33 +34,25 @@ export function SearchProvider({ children }) {
         });
     }
 
-    const handleSearch = async (e) => {
+    const handleSearch = (e) => {
         e.preventDefault();
-        if (!searchQuery.trim()) return;
-        
-        const data = await search(searchQuery, location.pathname);
-        setContent(data);
-        setSearchResults(searchQuery);
-    }
-
-    const response = async (type) => {
-        setContent([]);
-        const data = type == "series" ? await loadSeries() : await loadMovies();
-        setContent(data);
+        void runSearch(searchQuery);
     }
 
     const value = {
         searchQuery, 
         contents,
         setSearchQuery,
-        response,
+        loadCatalog,
+        loading,
+        error,
+        reload,
         handleSearch,
         favorites,
         addToFavorites,
         isDescriptionPage,
         setIsDescriptionPage,
-        searchResults,
-        setSearchResults
+        searchResults
     }
 
     return  (

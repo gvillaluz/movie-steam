@@ -1,0 +1,395 @@
+
+> moviestreamer-backend@0.1.0 test
+> tsc -p tsconfig.test.json && node --test .test-dist/test/*.test.js
+
+▶ Startup configuration
+  ✔ defaults to a local development server (5.6452ms)
+  ✖ accepts explicit valid configuration (4.5796ms)
+  ✖ permits an OS-assigned port for isolated verification (0.8197ms)
+  ✖ rejects invalid port "-1" (1.2753ms)
+  ✖ rejects invalid port "65536" (0.4809ms)
+  ✖ rejects invalid port "abc" (0.3491ms)
+  ✖ rejects invalid port "5080junk" (0.3528ms)
+  ✖ rejects invalid port "" (0.2624ms)
+  ✖ rejects invalid port "3.5" (0.3471ms)
+  ✖ rejects an empty host (0.6176ms)
+  ✖ rejects unsupported environments (0.3998ms)
+✖ Startup configuration (21.4402ms)
+▶ Foundation HTTP contract
+  ✖ returns only the liveness status (56.898ms)
+  ✖ returns consistent problem details for an unknown route (9.2735ms)
+  ✖ uses Nest routing semantics for unsupported methods (13.5975ms)
+  ✖ does not expose unexpected exception messages or stack traces (9.3574ms)
+  ✔ accepts a valid DTO (38.417ms)
+  ✖ rejects an invalid DTO: {"name":42} (9.0675ms)
+  ✖ rejects an invalid DTO: {"name":""} (7.0843ms)
+  ✖ rejects an invalid DTO: {} (9.2878ms)
+  ✖ rejects an invalid DTO: {"name":"Room","admin":true} (9.224ms)
+✖ Foundation HTTP contract (506.849ms)
+ℹ tests 20
+ℹ suites 2
+ℹ pass 2
+ℹ fail 18
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3867.0166
+
+✖ failing tests:
+
+test at .test-dist\test\environment.test.js:15:24
+✖ accepts explicit valid configuration (4.5796ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   HOST: '127.0.0.1',
+  +   NODE_ENV: 'development',
+  +   PORT: 5080
+  -   HOST: 'localhost',
+  -   NODE_ENV: 'production',
+  -   PORT: 5081
+    }
+  
+      at TestContext.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\.test-dist\test\environment.test.js:16:26)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Promise.all (index 0)
+      at async Suite.run (node:internal/test_runner/test:1905:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { PORT: 5080, HOST: '127.0.0.1', NODE_ENV: 'development' },
+    expected: { PORT: 5081, HOST: 'localhost', NODE_ENV: 'production' },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at .test-dist\test\environment.test.js:18:24
+✖ permits an OS-assigned port for isolated verification (0.8197ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  5080 !== 0
+  
+      at TestContext.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\.test-dist\test\environment.test.js:19:26)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 5080,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at .test-dist\test\environment.test.js:22:28
+✖ rejects invalid port "-1" (1.2753ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\.test-dist\test\environment.test.js:23:30)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /PORT/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at .test-dist\test\environment.test.js:22:28
+✖ rejects invalid port "65536" (0.4809ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\.test-dist\test\environment.test.js:23:30)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /PORT/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at .test-dist\test\environment.test.js:22:28
+✖ rejects invalid port "abc" (0.3491ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\.test-dist\test\environment.test.js:23:30)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /PORT/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at .test-dist\test\environment.test.js:22:28
+✖ rejects invalid port "5080junk" (0.3528ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\.test-dist\test\environment.test.js:23:30)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /PORT/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at .test-dist\test\environment.test.js:22:28
+✖ rejects invalid port "" (0.2624ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\.test-dist\test\environment.test.js:23:30)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /PORT/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at .test-dist\test\environment.test.js:22:28
+✖ rejects invalid port "3.5" (0.3471ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\.test-dist\test\environment.test.js:23:30)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /PORT/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at .test-dist\test\environment.test.js:26:24
+✖ rejects an empty host (0.6176ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\.test-dist\test\environment.test.js:27:26)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /HOST/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at .test-dist\test\environment.test.js:29:24
+✖ rejects unsupported environments (0.3998ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\.test-dist\test\environment.test.js:30:26)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /NODE_ENV/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at .test-dist\test\foundation.test.js:30:24
+✖ returns only the liveness status (56.898ms)
+  Error: expected 200 "OK", got 404 "Not Found"
+      at TestContext.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\.test-dist\test\foundation.test.js:34:14)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at async Promise.all (index 0)
+      at async Suite.run (node:internal/test_runner/test:1905:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ----
+      at Test._assertStatus (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:404:14)
+      at C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:460:13
+      at Test._assertFunction (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:437:13)
+      at Test.assert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:302:23)
+      at localAssert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:220:38)
+      at Server.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:227:13)
+      at Server.wrapper (node:events:639:12)
+      at Server.emit (node:events:514:20)
+      at emitCloseNT (node:net:2941:8)
+      at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+
+test at .test-dist\test\foundation.test.js:36:24
+✖ returns consistent problem details for an unknown route (9.2735ms)
+  Error: expected "Content-Type" matching /application\/problem\+json/, got "application/json; charset=utf-8"
+      at TestContext.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\.test-dist\test\foundation.test.js:39:14)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ----
+      at Test._assertHeader (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:384:16)
+      at C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:460:13
+      at Test._assertFunction (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:437:13)
+      at Test.assert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:302:23)
+      at localAssert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:220:38)
+      at Server.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:227:13)
+      at Server.wrapper (node:events:639:12)
+      at Server.emit (node:events:514:20)
+      at emitCloseNT (node:net:2941:8)
+      at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+
+test at .test-dist\test\foundation.test.js:47:24
+✖ uses Nest routing semantics for unsupported methods (13.5975ms)
+  Error: expected "Content-Type" matching /application\/problem\+json/, got "application/json; charset=utf-8"
+      at TestContext.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\.test-dist\test\foundation.test.js:50:14)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ----
+      at Test._assertHeader (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:384:16)
+      at C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:460:13
+      at Test._assertFunction (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:437:13)
+      at Test.assert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:302:23)
+      at localAssert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:220:38)
+      at Server.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:227:13)
+      at Server.wrapper (node:events:639:12)
+      at Server.emit (node:events:514:20)
+      at emitCloseNT (node:net:2941:8)
+      at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+
+test at .test-dist\test\foundation.test.js:55:24
+✖ does not expose unexpected exception messages or stack traces (9.3574ms)
+  Error: expected "Content-Type" matching /application\/problem\+json/, got "application/json; charset=utf-8"
+      at TestContext.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\.test-dist\test\foundation.test.js:58:14)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ----
+      at Test._assertHeader (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:384:16)
+      at C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:460:13
+      at Test._assertFunction (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:437:13)
+      at Test.assert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:302:23)
+      at localAssert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:220:38)
+      at Server.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:227:13)
+      at Server.wrapper (node:events:639:12)
+      at Server.emit (node:events:514:20)
+      at emitCloseNT (node:net:2941:8)
+      at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+
+test at .test-dist\test\foundation.test.js:74:28
+✖ rejects an invalid DTO: {"name":42} (9.0675ms)
+  Error: expected "Content-Type" matching /application\/problem\+json/, got "application/json; charset=utf-8"
+      at TestContext.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\.test-dist\test\foundation.test.js:78:18)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ----
+      at Test._assertHeader (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:384:16)
+      at C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:460:13
+      at Test._assertFunction (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:437:13)
+      at Test.assert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:302:23)
+      at localAssert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:220:38)
+      at Server.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:227:13)
+      at Server.wrapper (node:events:639:12)
+      at Server.emit (node:events:514:20)
+      at emitCloseNT (node:net:2941:8)
+      at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+
+test at .test-dist\test\foundation.test.js:74:28
+✖ rejects an invalid DTO: {"name":""} (7.0843ms)
+  Error: expected "Content-Type" matching /application\/problem\+json/, got "application/json; charset=utf-8"
+      at TestContext.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\.test-dist\test\foundation.test.js:78:18)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ----
+      at Test._assertHeader (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:384:16)
+      at C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:460:13
+      at Test._assertFunction (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:437:13)
+      at Test.assert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:302:23)
+      at localAssert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:220:38)
+      at Server.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:227:13)
+      at Server.wrapper (node:events:639:12)
+      at Server.emit (node:events:514:20)
+      at emitCloseNT (node:net:2941:8)
+      at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+
+test at .test-dist\test\foundation.test.js:74:28
+✖ rejects an invalid DTO: {} (9.2878ms)
+  Error: expected "Content-Type" matching /application\/problem\+json/, got "application/json; charset=utf-8"
+      at TestContext.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\.test-dist\test\foundation.test.js:78:18)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ----
+      at Test._assertHeader (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:384:16)
+      at C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:460:13
+      at Test._assertFunction (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:437:13)
+      at Test.assert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:302:23)
+      at localAssert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:220:38)
+      at Server.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:227:13)
+      at Server.wrapper (node:events:639:12)
+      at Server.emit (node:events:514:20)
+      at emitCloseNT (node:net:2941:8)
+      at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+
+test at .test-dist\test\foundation.test.js:74:28
+✖ rejects an invalid DTO: {"name":"Room","admin":true} (9.224ms)
+  Error: expected "Content-Type" matching /application\/problem\+json/, got "application/json; charset=utf-8"
+      at TestContext.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\.test-dist\test\foundation.test.js:78:18)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ----
+      at Test._assertHeader (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:384:16)
+      at C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:460:13
+      at Test._assertFunction (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:437:13)
+      at Test.assert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:302:23)
+      at localAssert (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:220:38)
+      at Server.<anonymous> (C:\Users\berna\Documents\movieStreamer\backend\node_modules\supertest\lib\test.js:227:13)
+      at Server.wrapper (node:events:639:12)
+      at Server.emit (node:events:514:20)
+      at emitCloseNT (node:net:2941:8)
+      at process.processTicksAndRejections (node:internal/process/task_queues:89:21)

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { searchById } from "../../services/serviceAPI";
+import { searchById } from "../../api/contentAPI";
 import { useLocation, useParams, useNavigate } from "react-router-dom";
 import Details from './components/Details'
 import Trailer from "./components/Trailer";

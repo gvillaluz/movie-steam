@@ -1,0 +1,50 @@
+[
+  {
+    "check": "live Home -> Vite proxy -> NestJS -> TMDB",
+    "passed": true,
+    "displayedMovies": 97,
+    "directTmdbApiRequests": 0
+  },
+  {
+    "check": "live Movies through backend",
+    "passed": true
+  },
+  {
+    "check": "favorites toggle and navigation remain functional",
+    "passed": true
+  },
+  {
+    "check": "favorites survive refresh",
+    "passed": false,
+    "preExisting": true,
+    "evidence": "Storage effect source is unchanged from HEAD; refresh assertion remains recorded as TODO."
+  },
+  {
+    "check": "live legacy series remains functional",
+    "passed": true
+  },
+  {
+    "check": "live legacy movie search remains functional",
+    "passed": true
+  },
+  {
+    "check": "controlled loading remains visible until completion",
+    "passed": true
+  },
+  {
+    "check": "controlled backend failure is distinct and retry recovers",
+    "passed": true
+  },
+  {
+    "check": "controlled empty response renders an empty state",
+    "passed": true
+  },
+  {
+    "check": "controlled late movie response cannot overwrite series navigation",
+    "passed": true
+  },
+  {
+    "check": "controlled stale search result cannot replace the newer query",
+    "passed": true
+  }
+]

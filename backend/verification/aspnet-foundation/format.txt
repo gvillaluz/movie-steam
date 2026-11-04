@@ -1,0 +1,2 @@
+Formatting code files in workspace 'C:\Users\berna\Documents\movieStreamer\backend\MovieStreamer.slnx'.
+Format complete in 12813ms.

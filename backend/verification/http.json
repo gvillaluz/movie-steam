@@ -1,0 +1,76 @@
+{
+  "environment": "production",
+  "checks": [
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:52759/api/health",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "contentType": "application/json",
+      "requestId": null,
+      "body": {
+        "status": "ok"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:52759/api/does-not-exist?private=not-echoed",
+      "expectedStatus": 404,
+      "actualStatus": 404,
+      "contentType": "application/problem+json",
+      "requestId": "5db073f1-b96e-4d40-8233-6f432abfa627",
+      "body": {
+        "type": "about:blank",
+        "title": "Not Found",
+        "status": 404,
+        "instance": "/api/does-not-exist",
+        "traceId": "5db073f1-b96e-4d40-8233-6f432abfa627"
+      }
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:52759/api/health",
+      "expectedStatus": 404,
+      "actualStatus": 404,
+      "contentType": "application/problem+json",
+      "requestId": "28137814-7d4a-4317-bd46-d99eba79a3fb",
+      "body": {
+        "type": "about:blank",
+        "title": "Not Found",
+        "status": 404,
+        "instance": "/api/health",
+        "traceId": "28137814-7d4a-4317-bd46-d99eba79a3fb"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:52759/api/test-probe/exception",
+      "expectedStatus": 404,
+      "actualStatus": 404,
+      "contentType": "application/problem+json",
+      "requestId": "b251b96a-5e58-4c90-8d75-768599aeeb61",
+      "body": {
+        "type": "about:blank",
+        "title": "Not Found",
+        "status": 404,
+        "instance": "/api/test-probe/exception",
+        "traceId": "b251b96a-5e58-4c90-8d75-768599aeeb61"
+      }
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:52759/api/test-probe/validation",
+      "expectedStatus": 404,
+      "actualStatus": 404,
+      "contentType": "application/problem+json",
+      "requestId": "74bdc241-19d1-44e2-9cfd-0553d4d10c60",
+      "body": {
+        "type": "about:blank",
+        "title": "Not Found",
+        "status": 404,
+        "instance": "/api/test-probe/validation",
+        "traceId": "74bdc241-19d1-44e2-9cfd-0553d4d10c60"
+      }
+    }
+  ]
+}

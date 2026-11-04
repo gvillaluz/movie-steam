@@ -1,0 +1,33 @@
+▶ movie catalog wiring and browser regressions
+  ⚠ favorites survive refresh (1010.5106ms) # Pre-existing StrictMode storage effects clear favorites; effects match the original source exactly.
+[{"check":"live Home -> Vite proxy -> NestJS -> TMDB","passed":true,"displayedMovies":97,"directTmdbApiRequests":0},{"check":"live Movies through backend","passed":true},{"check":"favorites toggle and navigation remain functional","passed":true},{"check":"favorites survive refresh","passed":false,"preExisting":true,"evidence":"Storage effect source is unchanged from HEAD; refresh assertion remains recorded as TODO."},{"check":"live legacy series remains functional","passed":true},{"check":"live legacy movie search remains functional","passed":true},{"check":"controlled loading remains visible until completion","passed":true},{"check":"controlled backend failure is distinct and retry recovers","passed":true},{"check":"controlled empty response renders an empty state","passed":true},{"check":"controlled late movie response cannot overwrite series navigation","passed":true},{"check":"controlled stale search result cannot replace the newer query","passed":true}]
+✔ movie catalog wiring and browser regressions (49874.3644ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 1
+ℹ duration_ms 50700.4003
+
+✖ failing tests:
+
+test at test\catalog.browser-check.mjs:90:17
+⚠ favorites survive refresh (1010.5106ms) # Pre-existing StrictMode storage effects clear favorites; effects match the original source exactly.
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///C:/Users/berna/Documents/movieStreamer/client/test/catalog.browser-check.mjs:93:20)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async TestContext.<anonymous> (file:///C:/Users/berna/Documents/movieStreamer/client/test/catalog.browser-check.mjs:90:9)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

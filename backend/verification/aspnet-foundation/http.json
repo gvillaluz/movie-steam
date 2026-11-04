@@ -1,0 +1,54 @@
+[
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:54593/api/health",
+    "expectedStatus": 200,
+    "actualStatus": 200,
+    "contentType": "application/json",
+    "body": {
+      "status": "ok"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:54593/api/does-not-exist",
+    "expectedStatus": 404,
+    "actualStatus": 404,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "https://tools.ietf.org/html/rfc9110#section-15.5.5",
+      "title": "Not Found",
+      "status": 404,
+      "instance": "/api/does-not-exist",
+      "traceId": "0HNPHFUO3JDCJ:00000001"
+    }
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:54593/api/health",
+    "expectedStatus": 405,
+    "actualStatus": 405,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "https://tools.ietf.org/html/rfc9110#section-15.5.6",
+      "title": "Method Not Allowed",
+      "status": 405,
+      "instance": "/api/health",
+      "traceId": "0HNPHFUO3JDCK:00000001"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:54593/api/test-exception",
+    "expectedStatus": 404,
+    "actualStatus": 404,
+    "contentType": "application/problem+json",
+    "body": {
+      "type": "https://tools.ietf.org/html/rfc9110#section-15.5.5",
+      "title": "Not Found",
+      "status": 404,
+      "instance": "/api/test-exception",
+      "traceId": "0HNPHFUO3JDCL:00000001"
+    }
+  }
+]

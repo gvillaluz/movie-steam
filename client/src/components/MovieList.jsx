@@ -1,68 +1,56 @@
-import { useContext, useEffect, useState } from "react";
-import { loadMovies, loadSeries } from "../services/serviceAPI"
+import { useContext, useEffect } from "react";
 import MovieCard from "./MovieCard";
 import './MovieList.css';
 import { SearchContext } from "../context/searchContext";
 import { useLocation } from "react-router-dom";
 
 const MovieList = (props) => {
-    const { contents, response, searchResults, setSearchResults} =  useContext(SearchContext);
-    const [loading, setLoading] = useState(true);
-    const [type, setType] = useState("");
+    const { contents, loading, error, loadCatalog, reload, searchResults } = useContext(SearchContext);
     const location = useLocation();
-    
-    useEffect(() => {
-        const loadContent = async () => {
-            response(props.type);
-            setLoading(false);
-        }
-        loadContent()
-    }, []);
+    const type = String(props.type).toLowerCase() === "series" ? "TV Series" : "Movies";
 
     useEffect(() => {
-        setSearchResults("");
-        setType(props.type === "movies" ? "Movies" : "TV Series");
-    }, [location.pathname, props.type]);
+        void loadCatalog(props.type);
+    }, [loadCatalog, props.type, location.pathname]);
 
-    const uniqueContents = Array.from(
-        new Map(contents.map((content) => [content.id, content])).values()
-    ).filter(con => 
-        con.poster_path &&
-        (con.release_date || con.first_air_date) && 
-        (con.title || con.name)
-    );
+    if (loading) {
+        return (
+            <div className="loading" role="status">
+                <div className="loader"></div>
+                <h3>Loading {type}.....</h3>
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className="no-content" role="alert">
+                <h2>{error}</h2>
+                <button type="button" onClick={() => { void reload(); }}>Try again</button>
+            </div>
+        );
+    }
+
+    if (contents.length === 0) {
+        return (
+            <div className="no-content">
+                <h2>{searchResults ? "No Search Results Found." : `No ${type.toLowerCase()} found.`}</h2>
+            </div>
+        );
+    }
 
     return (
-        (!loading ? (
-            (uniqueContents.length !== 0 ? 
-                <div className="main-content">
-                    <h1>
-                        {searchResults 
-                            ? `Search Results for '${searchResults}'` 
-                            : location.pathname !== "/" 
-                                ? `Popular ${type}` 
-                                : ""}
-                    </h1>
-
-                    <div className="movie-list">
-                        {
-                            uniqueContents.map((content, index) => <MovieCard key={content.id + '-' + index} content={content} type={props.type} />)
-                        }
-                    </div> 
-                </div>
-            : 
-            <div className="no-content">
-                <h2>No Search Results Found.</h2>
+        <div className="main-content">
+            <h1>
+                {searchResults
+                    ? `Search Results for '${searchResults}'`
+                    : location.pathname !== "/" ? `Popular ${type}` : ""}
+            </h1>
+            <div className="movie-list">
+                {contents.map(content => <MovieCard key={content.id} content={content} type={props.type} />)}
             </div>
-            )
-        ) : (
-            <div className="loading">
-                <div className="loader"></div>
-                <h3>Loading {props.type}.....</h3>
-            </div>
-
-        ))
-    )
-}
+        </div>
+    );
+};
 
 export default MovieList;

@@ -1,7 +1,8 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import './WatchPage.css';
 import { useEffect, useState } from 'react';
-import { getEpisodesBySeason, getVideoById } from '../../services/serviceAPI';
+import { getEpisodesBySeason } from '../../api/seriesAPI';
+import { getVideoById } from '../../api/contentAPI';
 import { convertRuntime } from '../../utils/DurationUtils';
 import RelatedContent from '../Description/components/RelatedContent';
 import WatchPageRelated from './components/WatchPageRelated';

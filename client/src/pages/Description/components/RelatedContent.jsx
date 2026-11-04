@@ -1,4 +1,4 @@
-import { getSimilarContent } from "../../../services/serviceAPI";
+import { getSimilarContent } from "../../../api/contentAPI";
 import MovieCard from "../../../components/MovieCard";
 import { useState, useEffect } from 'react'
 

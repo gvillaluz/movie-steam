@@ -1,0 +1,36 @@
+
+> moviestreamer-backend@0.1.0 test
+> tsc -p tsconfig.test.json && node --test .test-dist/test/*.test.js
+
+▶ Startup configuration
+  ✔ defaults to a local development server (5.2375ms)
+  ✔ accepts explicit valid configuration (0.2569ms)
+  ✔ permits an OS-assigned port for isolated verification (0.2305ms)
+  ✔ rejects invalid port "-1" (0.5182ms)
+  ✔ rejects invalid port "65536" (0.1675ms)
+  ✔ rejects invalid port "abc" (0.114ms)
+  ✔ rejects invalid port "5080junk" (0.1069ms)
+  ✔ rejects invalid port "" (0.1551ms)
+  ✔ rejects invalid port "3.5" (0.1795ms)
+  ✔ rejects an empty host (0.5683ms)
+  ✔ rejects unsupported environments (0.3153ms)
+✔ Startup configuration (10.3431ms)
+▶ Foundation HTTP contract
+  ✔ returns only the liveness status (64.6292ms)
+  ✔ returns consistent problem details for an unknown route (27.2841ms)
+  ✔ uses Nest routing semantics for unsupported methods (7.2607ms)
+  ✔ does not expose unexpected exception messages or stack traces (5.9355ms)
+  ✔ accepts a valid DTO (35.5069ms)
+  ✔ rejects an invalid DTO: {"name":42} (7.3523ms)
+  ✔ rejects an invalid DTO: {"name":""} (5.7173ms)
+  ✔ rejects an invalid DTO: {} (4.6834ms)
+  ✔ rejects an invalid DTO: {"name":"Room","admin":true} (8.6811ms)
+✔ Foundation HTTP contract (536.0274ms)
+ℹ tests 20
+ℹ suites 2
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2995.9836

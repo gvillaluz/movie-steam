@@ -41,6 +41,7 @@ Every slice and every roadmap phase needs a written proposal and explicit user a
 
 - Work one end-to-end slice at a time. A slice is the smallest change that works end to end.
 - Name affected applications, allowed paths, API contract changes, acceptance criteria, prerequisites, exclusions, and verification steps in the proposal.
+- Always create a git worktree for each approved slice and make all changes there, not in the main working tree. Create it only after approval, on a new branch named for the slice. Report its path and branch when finished.
 - Inspect and preserve existing working-tree changes.
 - Coordinate backend contracts before implementing affected frontend consumers. Define requests, responses, validation, authorization, and error cases.
 - Read each application's `AGENTS.md` for its actual verification commands. Do not invent build or test commands for unconfigured projects, and do not claim verification that was not performed.
